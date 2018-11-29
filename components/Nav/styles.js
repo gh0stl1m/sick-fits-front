@@ -1,3 +1,4 @@
+// External libraries
 import styled from 'styled-components';
 
 const NavStyles = styled.ul`
