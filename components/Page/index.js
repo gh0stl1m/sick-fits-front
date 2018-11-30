@@ -1,6 +1,8 @@
 // External libraries
 import React, { Component } from 'react';
 import { ThemeProvider, injectGlobal } from 'styled-components';
+import Router from 'next/router';
+import NProgress from 'nprogress';
 
 // Components
 import Header from '../Header';
@@ -8,6 +10,11 @@ import Meta from '../Meta';
 
 // Styled components
 import { InnerPage, PageDiv } from './styles';
+
+// Router events
+Router.onRouteChangeStart = () => NProgress.start();
+Router.onRouteChangeComplete = () => NProgress.done();
+Router.onRouteChangeError = () => NProgress.done();
 
 // Theme
 const theme = {
